@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        .result {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .lime-explanation {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prediction Result</h1>
+    
+    <div class="result">
+    <p><strong>Prediction:</strong> {{ 'Live Birth' if prediction == 1 else 'Not Live Birth' }}</p>
+    <p><strong>Prediction Probability (Live Birth):</strong> {{ (prediction_proba[1] * 100) | round | int }}%</p>
+    <p><strong>Prediction Probability (Not Live Birth):</strong> {{ (prediction_proba[0] * 100) | round | int }}%</p>
+    </div>
+
+
+    <h2>LIME Explanation</h2>
+    <div class="lime-explanation">
+        {{ lime_html | safe }}
+    </div>
+
+    <a href="/">Go back</a>
+</body>
+</html>

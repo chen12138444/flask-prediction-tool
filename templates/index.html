@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Birth Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter Your Details for Live Birth Prediction</h1>
+    
+    <form action="/predict" method="post">
+        <label for="age">Age(years):</label>
+        <input type="text" id="age" name="age" required><br>
+
+        <label for="amh">AMH(ng/mL):</label>
+        <input type="text" id="amh" name="amh" required><br>
+
+        <label for="fsh">FSH(IU/L):</label>
+        <input type="text" id="fsh" name="fsh" required><br>
+
+        <label for="treatment">Treatment (IVF/ICSI):</label>
+        <select id="treatment" name="treatment" required>
+            <option value="" selected disabled> </option> <!-- Added empty option -->
+            <option value="2">IVF</option>
+            <option value="1">ICSI</option>
+        </select><br>
+
+        <label for="uterine_infertility">Uterine Infertility (Yes/No):</label>
+        <select id="uterine_infertility" name="uterine_infertility" required>
+            <option value="" selected disabled> </option> <!-- Added empty option -->
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
